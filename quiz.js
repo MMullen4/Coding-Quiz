@@ -1,6 +1,8 @@
 var timer = 30
 var questionindex = 0
 var elpsed;
+var score = 0
+var initals = localStorage.getItem("initals");
 
 const questions = [
     {
@@ -48,6 +50,9 @@ const timerdiv = document.querySelector("#timer")
 const right= document.querySelector("#correct")
 
 start.addEventListener("click", function () {
+    timer = 30
+    questionindex = 0
+    score =0
     displayquestion()
     clock ()
 })
@@ -70,6 +75,7 @@ function checkans() {
     if (this.value === "true") {
         console.log("true")
         right.innerHTML = '<p style="Font-size:50px;">Correct! </p>'
+        score = score + 1
     } else {
         console.log("false");
         right.innerHTML = '<p style="Font-size:50px;">Wrong! </p>'
@@ -78,7 +84,8 @@ function checkans() {
     questionindex++
     if (questionindex >= questions.length) {
         console.log("Game Over");
-        alert("Game Over!");
+        alert("Game Over! You answered " + score + " correctly. Enter your initals");
+        localStorage.getItem('initals');
     } else {
         displayquestion();
     }
@@ -89,7 +96,7 @@ function clock() {
         timerdiv.textContent = timer
         if (timer === 0) {
             clearInterval(elpsed);
-        } else if (timer < 0) {
+        } else if (timer <= 0) {
             timer = 0
             clearInterval(elpsed)
         }
