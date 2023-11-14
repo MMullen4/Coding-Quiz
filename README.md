@@ -24,7 +24,7 @@ Email me at matt@mmcprintpackaging.com.
 I am always open to suggestions for improvement.  Send those to email above. 
 
 ## Authors and acknowledgment
-Bobbi Tarkany is awesome and was very helpful to this project.
+Bobbi Tarkany (TA) and various classmates were very helpful to the completion this project.
 
 ## License
 NA
