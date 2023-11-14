@@ -1,4 +1,4 @@
-var timer = 20
+var timer = 30
 var questionindex = 0
 var elpsed;
 
@@ -45,11 +45,13 @@ const quiz = document.querySelector("#quizcontent")
 const question = document.querySelector("#question")
 const selection = document.querySelector("#selection")
 const timerdiv = document.querySelector("#timer")
+const right= document.querySelector("#correct")
 
 start.addEventListener("click", function () {
     displayquestion()
     clock ()
 })
+
 function displayquestion() {
     var currentquestion = questions[questionindex];
     question.textContent = currentquestion.questions
@@ -67,10 +69,16 @@ function checkans() {
     console.log(this)
     if (this.value === "true") {
         console.log("true")
-    } else { console.log("false") }
+        right.innerHTML = '<p style="Font-size:50px;">Correct! </p>'
+    } else {
+        console.log("false");
+        right.innerHTML = '<p style="Font-size:50px;">WRONG! </p>'
+        timer -= 2
+    }
     questionindex++
     if (questionindex >= questions.length) {
-        console.log("Game Over")
+        console.log("Game Over");
+        alert("Game Over!");
     } else {
         displayquestion();
     }
@@ -79,5 +87,11 @@ function clock() {
     elpsed = setInterval(function () {
         timer--                             // subtracts 1 from timer
         timerdiv.textContent = timer
+        if (timer === 0) {
+            clearInterval(elpsed);
+        } else if (timer < 0) {
+            timer = 0
+            clearInterval(elpsed)
+        }
     }, 1000)
 }
