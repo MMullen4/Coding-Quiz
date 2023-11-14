@@ -72,7 +72,7 @@ function checkans() {
         right.innerHTML = '<p style="Font-size:50px;">Correct! </p>'
     } else {
         console.log("false");
-        right.innerHTML = '<p style="Font-size:50px;">WRONG! </p>'
+        right.innerHTML = '<p style="Font-size:50px;">Wrong! </p>'
         timer -= 2
     }
     questionindex++
