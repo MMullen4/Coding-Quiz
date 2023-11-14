@@ -6,7 +6,7 @@ JS Code Quiz
 This program tests the user's knowledge of Javascrip by asking a few questions in a set time frame. Wrong answers reduce the timer by 2 seconds.  The number of correct answers is displayed at the end of the quiz.
 
 ## Link
-
+file:///Users/mattmullen/Documents/GitHub/HW4/index.html
 
 ## Visuals
 https://watch.screencastify.com/v/RBRexCM2zJXaBzQU2swa
