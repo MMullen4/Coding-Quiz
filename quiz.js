@@ -47,7 +47,7 @@ const question = document.querySelector("#question")
 const selection = document.querySelector("#selection")
 const timerdiv = document.querySelector("#timer")
 const right = document.querySelector("#correct")
-const initals = document.querySelector("initals");
+const initials = document.querySelector("initials");
 
 start.addEventListener("click", function () {
     timer = 30
@@ -84,8 +84,9 @@ function checkans() {
     questionindex++
     if (questionindex >= questions.length) {
         console.log("Game Over");
-        alert("Game Over! You answered " + score + " correctly. Enter your initals");
-        localStorage.getItem('initals');
+        alert("Game Over! You answered " + score + " correctly.");
+        let initals =prompt ("Enter your initials - ")
+        localStorage.setItem('initials', initials);
     } else {
         displayquestion();
     }
